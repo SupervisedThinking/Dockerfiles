@@ -1,0 +1,5 @@
+1.0.0
+- Initial commit
+- linux 5.1.2.arch1-1
+- mesa 19.0.4-1
+- nvidia 430.14-1
