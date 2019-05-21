@@ -28,8 +28,7 @@ RUN  find /. -name "*~" -type f -delete && \
 
 # Remove downloaded packages & clean cache
 RUN pacman -Scc --noconfirm && \
-    pacman -optimize && \
-    pacman -Runs --noconfirm tar && \
+    pacman -optimize && \    pacman -Runs --noconfirm tar && \
     rm -rf /var/lib/pacman/sync/* && \
     rm -rf /tmp/*
 
