@@ -12,7 +12,8 @@ MAINTAINER Frank Hartung (supervisedthinking (@) gmail.com)
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN dirmngr </dev/null > /dev/null 2>&1 && \
-    pacman --noconfirm -Syu archlinux-keyring && pacman --noconfirm -S steam && \
+    pacman --noconfirm -Syu archlinux-keyring && \
+    pacman --noconfirm -S steam lib32-libglvnd nvidia lib32-nvidia-utils && \
     rm -rf /usr/share/info/* && \
     rm -rf /usr/share/man/* && \
     rm -rf /usr/share/doc/* && \
@@ -27,7 +28,7 @@ RUN  find /. -name "*~" -type f -delete && \
 
 # Remove downloaded packages & clean cache
 RUN pacman -Scc --noconfirm && \
-    pacman-optimize && \
+    pacman -optimize && \
     pacman -Runs --noconfirm tar && \
     rm -rf /var/lib/pacman/sync/* && \
     rm -rf /tmp/*
