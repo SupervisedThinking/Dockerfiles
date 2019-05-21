@@ -4,7 +4,7 @@
 # 
 ########################################################################################################
 
-FROM archlinux/base:latest
+FROM supervisedthinking/arch-base:latest
 
 MAINTAINER Frank Hartung (supervisedthinking (@) gmail.com)
 
